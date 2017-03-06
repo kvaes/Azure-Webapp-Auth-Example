@@ -15,12 +15,6 @@
 <body>
 	<div class="container">
 		<?php
-		echo '<table class="table table-striped table-hover">';
-		foreach (getallheaders() as $name => $value) {
-			echo "<tr><td>$name</td><td>$value</td></tr>";
-		}
-		echo "</table>";
-		
 		$authUser = $_SERVER['HTTP_X_MS_CLIENT_PRINCIPAL_NAME'];
 		if ($authUser <> "") {
 			echo "<h1>Logged in as $authUser</h1>";
@@ -34,6 +28,13 @@
 			echo '<p><a href="/.auth/login/twitter">Login Twitter</a></p>';
 			echo '<p><a href="/.auth/login/microsoft">Login Microsoft</a></p>';
 		}
+		
+		echo "<h1>Header Information</h1>";
+		echo '<table class="table table-striped table-hover">';
+		foreach (getallheaders() as $name => $value) {
+			echo "<tr><td>$name</td><td>$value</td></tr>";
+		}
+		echo "</table>";
 		
 		/*echo "<h1>_Server</h1>";
 		echo "<p>";
