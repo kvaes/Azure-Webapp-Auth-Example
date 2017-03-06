@@ -20,6 +20,26 @@
 			echo "<tr><td>$name</td><td>$value</td></tr>";
 		}
 		echo "</table>";
+		
+		$authUser = $_SERVER['HTTP_X_MS_CLIENT_PRINCIPAL_NAME'];
+		if ($authUser <> "") {
+			echo "<h1>Logged in as $authUser</h1>";
+			echo '<p><a href="/.auth/me">User details</a></p>';
+			echo '<p><a href="/.auth/logout/">Logout</a></p>';
+		} else {
+			echo "<h1>You are not logged in!</h1>";
+			echo '<p><a href="/.auth/login/aad">Login Azure Active Directory</a></p>';
+			echo '<p><a href="/.auth/login/facebook">Login Facebook</a></p>';
+			echo '<p><a href="/.auth/login/google">Login Google</a></p>';
+			echo '<p><a href="/.auth/login/twitter">Login Twitter</a></p>';
+			echo '<p><a href="/.auth/login/microsoft">Login Microsoft</a></p>';
+		}
+		
+		/*echo "<h1>_Server</h1>";
+		echo "<p>";
+		print_r($_SERVER);
+		echo "</p>";*/
+		
 		?>
 	</div>
 </body>
