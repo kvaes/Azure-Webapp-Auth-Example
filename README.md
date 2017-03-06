@@ -1,1 +1,8 @@
-# Azure-Webapp-Auth-Example
+Usage
+=====
+(todo)
+
+
+License
+=======
+MIT
