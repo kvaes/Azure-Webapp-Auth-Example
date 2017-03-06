@@ -19,7 +19,7 @@
 		if ($authUser <> "") {
 			echo "<h1>Logged in as $authUser</h1>";
 			echo '<p><a href="/.auth/me">User details</a></p>';
-			echo '<p><a href="/.auth/logout/">Logout</a></p>';
+			echo '<p><a href="/.auth/logout">Logout</a></p>';
 		} else {
 			echo "<h1>You are not logged in!</h1>";
 			echo '<p><a href="/.auth/login/aad">Login Azure Active Directory</a></p>';
