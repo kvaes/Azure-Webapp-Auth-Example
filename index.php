@@ -26,7 +26,7 @@
 			echo '<p><a href="/.auth/login/facebook">Login Facebook</a></p>';
 			echo '<p><a href="/.auth/login/google">Login Google</a></p>';
 			echo '<p><a href="/.auth/login/twitter">Login Twitter</a></p>';
-			echo '<p><a href="/.auth/login/microsoft">Login Microsoft</a></p>';
+			echo '<p><a href="/.auth/login/microsoftaccount">Login Microsoft</a></p>';
 		}
 		
 		echo "<h1>Header Information</h1>";
