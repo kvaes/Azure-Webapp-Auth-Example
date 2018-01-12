@@ -1,0 +1,35 @@
+<html>
+<script type="text/javascript">
+
+function getJson(url) {
+  return JSON.parse($.ajax({
+    type: "GET",
+    url: 'https://<URL>/.auth/me',
+	dataType: 'json',
+	global: false,
+    async:false,
+    success: function(data){
+		var returnedGivenname = $.grep(data[0].user_claims, function (element, index) {
+			return element.typ == "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname";
+		});
+		var returnedSurname = $.grep(data[0].user_claims, function (element, index) {
+			return element.typ == "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname";
+		});
+		var acnusername = returnedGivenname[0].val + " " + returnedSurname[0].val;
+		console.log(acnusername);
+		var acnemail = data[0].user_id;
+		console.log(acnemail);
+		$('#username').html('Hi ' + acnusername +'!');
+		return data;
+    }
+}).responseText);
+}
+
+jQuery(document).ready(function() {
+  getJson();
+});
+
+</script>
+
+<div id="username"></div>
+</html>
